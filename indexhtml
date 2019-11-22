@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    
+    <title>Geo Search</title>
+</head>
+<body>
+    <div class="container">
+        <section id="content">
+            
+                <h1>Geo Search</h1>
+                <div>
+                    <form>
+                        <input id="search" type="text" placeholder="Search.."/>
+                        <button onclick="activatePlacesSearch()">Search</button>
+                    </form>
+                </div>
+                
+                <div id="map"></div>
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217017.41637629236!2d3.143870718242269!3d6.548376812166327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos%2C%20Nigeria!5e1!3m2!1sen!2sus!4v1573030478530!5m2!1sen!2sus" width="100%" height="500" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
+            
+        </section><!-- content -->
+    </div><!-- container -->
+    <script>
+        let pos;
+        let map;
+    
+        function activatePlacesSearch() {
+            // Set the default location and initialize all variables
+            pos = {lat: -33.857, lng: 151.213};
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: pos,
+                zoom: 15
+            });
+        }
+
+        // function activatePlacesSearch(){
+        //     var input = document.getElementById('search').value;
+
+        //     var autocomplete = new google.maps.places.Autocomplete(input);
+        // };
+    </script>
+    <script 
+    async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSR36QbgxjKmLER1e_a_HRdpsJt-Vb_v4&libraries=places&callback=activatePlacesSearch">
+    </script>
+</body>
+</html>
